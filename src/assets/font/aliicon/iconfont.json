@@ -1,0 +1,58 @@
+{
+  "id": "2067190",
+  "name": "郑涛的Vue组件库",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "693586",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "2760460",
+      "name": "右箭头",
+      "font_class": "arrow-right",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "3544821",
+      "name": "下箭头",
+      "font_class": "arrow",
+      "unicode": "e73a",
+      "unicode_decimal": 59194
+    },
+    {
+      "icon_id": "5449918",
+      "name": "左箭头",
+      "font_class": "arrow-right1",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "5627507",
+      "name": "git",
+      "font_class": "git",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "5969561",
+      "name": "上箭头",
+      "font_class": "up",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "12164060",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e756",
+      "unicode_decimal": 59222
+    }
+  ]
+}
