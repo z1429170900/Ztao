@@ -37,6 +37,7 @@ export default {
         });
         const itemChange = (e) => {
             state.active = e;
+            context.emit("onActive", e);
         }
         
         provide('itemChange', itemChange);

@@ -1,7 +1,7 @@
 <template>
     <div class="item" @click="checkItem">
         <router-link :class="{action: data.id === active}" :to="data.path" v-if="data.path">{{ data.name }}</router-link>
-        <a href="javascript:void()" v-else>地址未传</a>
+        <a href="javascript:void()" :class="{action: data.id === active}" v-else>{{ data.name }}(Path未传)</a>
     </div>
 </template>
 
@@ -15,14 +15,15 @@
             height: 100%;
             display: block;
             box-sizing: border-box;
-            transition: all 0.5s ease;
+            transition: background 0.5s ease;
         }
         a:hover {
-            color: #008dfe;
+            color: var(--themeColor);
         }
         .action {
-            background: rgb(230, 247, 255);
-            color: #008dfe;
+            background: var(--themeBgColor);
+            color: var(--themeColor);
+            border-right: 3px solid var(--themeColor);
         }
     }
     

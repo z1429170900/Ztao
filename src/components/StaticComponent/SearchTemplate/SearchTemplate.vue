@@ -1,6 +1,6 @@
 <template>
     <div>
-        <trans-input placeholder="在Ztao中搜索" v-model="state.inputText" icon="icon-search" @change="inputTextChange"></trans-input>
+        <trans-input placeholder="在Ztao中搜索" v-model:ztao="state.inputText" icon="icon-search" @change="inputTextChange"></trans-input>
     </div>
 </template>
 
@@ -18,10 +18,9 @@ export default {
     },
     setup(props, context) {
         const state = reactive({
-            inputText: "111"
+            inputText: ""
         })
         function inputTextChange(e) {
-            console.log(e)
         }
         return {
             state,

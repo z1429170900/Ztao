@@ -10,6 +10,8 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    --themeColor:#008dfe;
+    --themeBgColor: #008dfe4d;
   }
   #app {
     width: 100%;

@@ -38,7 +38,7 @@
             }
         }
         .subitem_title:hover {
-            color: #008dfe;
+            color: var(--themeColor);
             transition: color 0.5s ease;
         }
         .sub_content {

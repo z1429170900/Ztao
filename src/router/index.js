@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue'
+import HomePage from '../components/HomeComponent/Content/HomePage/HomePage';
+// Doc
 import MenuDoc from '../components/HomeComponent/Content/MenuDoc/MenuDoc';
 import InputDoc from '../components/HomeComponent/Content/InputDoc/InputDoc';
-import HomePage from '../components/HomeComponent/Content/HomePage/HomePage';
+import TableDoc from '../components/HomeComponent/Content/TableDoc/TableDoc';
+import BubbleDoc from '../components/HomeComponent/Content/BubbleDoc/BubbleDoc';
+import MessageDoc from '../components/HomeComponent/Content/MessageDoc/MessageDoc';
 
 const routes = [
   {
@@ -29,6 +33,21 @@ const routes = [
             path: '/docs/inputdoc',
             name: 'InputDoc',
             component: InputDoc
+          },
+          {
+            path: '/docs/tableDoc',
+            name: 'TableDoc',
+            component: TableDoc
+          },
+          {
+            path: '/docs/bubbleDoc',
+            name: 'BubbleDoc',
+            component: BubbleDoc
+          },
+          {
+            path: '/docs/messageDoc',
+            name: 'MessageDoc',
+            component: MessageDoc
           }
         ]
       }

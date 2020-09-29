@@ -1,7 +1,7 @@
 <template>
     <div class="trans_input">
         <span :class="icon" class="iconfont" v-if="icon"></span>
-        <input :type="type" @input="sendInput" v-model="value" :placeholder="placeholder">
+        <input :type="type" @input="sendInput" :value="ztao" :placeholder="placeholder">
     </div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
             type: String,
             default: ""
         },
-        value: {
+        ztao: {
             type: [String, Number],
             default: ""
         }
@@ -48,7 +48,7 @@ export default {
         onMounted(() => { // 挂载完成回调
         });
         function sendInput(e) {
-            context.emit("input", e.target.value); // 自定义双向绑定
+            context.emit("update:ztao", e.target.value); // 自定义双向绑定
             context.emit("change", e.target.value);
         }
         return {
