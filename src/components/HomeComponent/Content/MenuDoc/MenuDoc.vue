@@ -29,10 +29,10 @@
             </div>
         </template>
         <template v-slot:parameter>
-            <v-table :column="table.apiColumn" :data="table.apiData"></v-table>
+            <msg-table :data="msgData"></msg-table>
         </template>
         <template v-slot:event>
-            <v-table :column="eventTable.eventColumn" :data="eventTable.eventData"></v-table>
+            <event-table :data="eventData"></event-table>
         </template>
     </doc-template>
 </template>
@@ -75,15 +75,17 @@ import CodeBorder from '../../../StaticComponent/CodeBorder/CodeBorder';
 import { onMounted, reactive } from 'vue';
 import example1 from './code/example1';
 import example2 from './code/example2';
-import Table from '../../../PublicComponent/Table/Table';
 import DocTemplate from '../../../StaticComponent/DocTemplate/DocTemplate';
+import MsgTable from '../../../StaticComponent//MsgTable/MsgTable';
+import EventTable from '../../../StaticComponent/EventTable/EventTable';
 
 export default {
     components: {
         'v-menu': Menu,
         'code-border': CodeBorder,
-        'v-table': Table,
-        'doc-template': DocTemplate
+        'doc-template': DocTemplate,
+        'msg-table': MsgTable,
+        'event-table': EventTable
     },
     setup() {
         const exampleState1 = reactive({
@@ -169,65 +171,28 @@ export default {
 
         });
 
-        const table = {
-            apiColumn: [
-                {
-                    name: "参数名称",
-                    key: "name"
-                },
-                {
-                    name: "参数说明",
-                    key: "remark"
-                },
-                {
-                    name: "参数类型",
-                    key: "type"
-                },
-                {
-                    name: "默认值",
-                    key: "default",
-                    default: "无"
-                }
-            ],
-            apiData: [
-                {
-                    name: "menuList",
-                    remark: "菜单列表",
-                    type: "Array",
-                    default: "[]"
-                },
-                {
-                    name: "defaultActive",
-                    remark: "默认选中项",
-                    type: "String",
-                    default: ""
-                }
-            ]
-        }
+        const msgData = [
+            {
+                name: "menuList",
+                remark: "菜单列表",
+                type: "Array",
+                default: "[]"
+            },
+            {
+                name: "defaultActive",
+                remark: "默认选中项",
+                type: "String",
+                default: ""
+            }
+        ]
 
-        const eventTable = {
-            eventColumn: [
-                {
-                    name: "事件名称",
-                    key: "name"
-                },
-                {
-                    name: "事件说明",
-                    key: "remark"
-                },
-                {
-                    name: "返回值",
-                    key: "backData"
-                }
-            ],
-            eventData: [
-                {
-                    name: "on-active",
-                    remark: "点击某项item后执行",
-                    backData: "id: 当前点击项的id"
-                }
-            ]
-        }
+        const eventData = [
+            {
+                name: "on-active",
+                remark: "点击某项item后执行",
+                backData: "id: 当前点击项的id"
+            }
+        ]
 
 
         const userList = [
@@ -238,8 +203,8 @@ export default {
             }
         ]
         return {
-            table,
-            eventTable,
+            msgData,
+            eventData,
             exampleState1,
             exampleState2,
             userList

@@ -33,8 +33,25 @@ export const ComponentList = [
                 name: '提示',
                 path: '/docs/messagedoc',
                 id: "1-5"
+            },
+            {
+                type: "item",
+                name: '按钮',
+                path: '/docs/buttondoc',
+                id: "1-6"
             }
         ]
     },
-    
+    {
+        type: "group",
+        name: "表单系列",
+        id: "2",
+        children: [
+            {
+                type: "item",
+                name: "级联选择器",
+                path: "/docs/cascaderdoc"
+            }
+        ]
+    }
 ]

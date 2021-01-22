@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12952853",
+      "name": "下拉 展开 箭头01",
+      "font_class": "xialazhankaijiantou",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "12952854",
+      "name": "下拉 展开 箭头01",
+      "font_class": "xialazhankaijiantou1",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "12952855",
+      "name": "下拉 展开 箭头01",
+      "font_class": "xialazhankaijiantou-copy",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "15227384",
+      "name": "下拉 展开 箭头01",
+      "font_class": "xialazhankaijiantou2",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
       "icon_id": "8287309",
       "name": "代码",
       "font_class": "daima",

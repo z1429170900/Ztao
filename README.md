@@ -1,5 +1,8 @@
 # vue30js
 
+## Browse address
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 ## Project setup
 ```
 npm install

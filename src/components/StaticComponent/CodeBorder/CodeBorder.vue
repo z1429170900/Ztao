@@ -7,11 +7,16 @@
             <span class="iconfont icon-fuzhi"></span>
             <span @click="openCode" class="iconfont icon-daima"></span>
         </div>
-        <transition name="open">
+        <collapse-transition>
             <div class="code" v-show="codeShow">
                 <slot name="code"></slot>
             </div>
-        </transition>
+        </collapse-transition>
+    </div>
+    <div class="code_message">
+        <slot name="message">
+            <p>说明：{{ message }}</p>
+        </slot>
     </div>
 </template>
 
@@ -21,8 +26,10 @@
         height: auto;
         border: 1px solid #ebedf0;
         overflow: auto;
+        padding: 10px;
+        box-sizing: border-box;
         .component {
-            height: 358px;
+            min-height: 258px;
         }
         .toolbar {
             height: 42px;
@@ -43,18 +50,32 @@
             overflow: auto;
         }
     }
-    // .open-enter-active, .open-leave-active {
-    //     transition: all .5s
-    // }
-    // .open-enter-to, .open-leave-active {
-    //     height: 0;
-    // }
+    .code_message {
+        padding: 10px;
+        background: #f9f9f9;
+        border: 1px solid #ebedf0;
+        border-top: 0;
+        color: #888;
+    }
+    p {
+        margin: 0;
+    }
 </style>
 
 <script>
 import { reactive, ref } from 'vue';
+import CollapseTransition from '../../../assets/js/collapse-transition';
 
 export default {
+    props: {
+        message: {
+            type: String,
+            default: "暂无说明"
+        }
+    },
+    components: {  
+        'collapse-transition': CollapseTransition
+    },
     setup() {
         const codeShow = ref(false);
         function openCode() {

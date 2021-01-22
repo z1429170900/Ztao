@@ -14,7 +14,7 @@
             <colgroup>
                 <col v-for="item in columnList" :key="item._id" :width="item.width || columnWidth">
             </colgroup>
-            <tbody>
+            <tbody :class="{stripe: stripe}">
                 <tr v-for="item in dataList" :key="item._id">
                     <td v-for="jtem in columnList" :key="jtem._id">
                         <template v-if="!jtem.render">
@@ -36,6 +36,7 @@
         text-align: center;
         .table {
             width: 100%;
+            border-left: 1px solid #f9f9f9;
             td, th {
                 padding: 10px 0;
             }
@@ -45,8 +46,14 @@
         }
         .content {
             td {
-                border-bottom: 1px solid #fafafa;
+                border-bottom: 1px solid #f9f9f9;
+                border-right: 1px solid #f9f9f9;
                 box-sizing: border-box;
+            }
+            .stripe {
+                tr:nth-child(even) {
+                    background: #f9f9f9;
+                }
             }
         }
     }
@@ -65,6 +72,10 @@ export default {
         data: {
             type: Array,
             default: () => []
+        },
+        stripe: {
+            type: Boolean,
+            default: false
         }
     },
     components: {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <trans-input placeholder="在Ztao中搜索" v-model:ztao="state.inputText" icon="icon-search" @change="inputTextChange"></trans-input>
+        <trans-input style="border:0" :animation="false" placeholder="在Ztao中搜索" v-model:ztao="state.inputText" icon="icon-search" @change="inputTextChange"></trans-input>
     </div>
 </template>
 

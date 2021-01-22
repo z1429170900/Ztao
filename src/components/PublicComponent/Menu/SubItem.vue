@@ -4,18 +4,20 @@
             <span class="text">{{ data.name }}</span>
             <span class="iconfont icon-arrow-right arrow" :class="{'on_bottom': state.itemShow}"></span>
         </div>
-        <transition name="slide">
-            <div class="sub_content" v-show="state.itemShow">
-                <template v-for="item in data.children" :key="item.id">
+        <!-- <transition name="slide"> -->
+        <collapse-transition>
+            <ul class="sub_content" v-show="state.itemShow">
+                <li v-for="item in data.children" :key="item.id">
                     <template v-if="item.type === 'subItem'">
                         <sub-item :active="active" :data='item'></sub-item>
                     </template>
                     <template v-else>
                         <v-item :active="active" :data='item'></v-item>
                     </template>
-                </template>
-            </div>
-        </transition>
+                </li>
+            </ul>
+        </collapse-transition>
+        <!-- </transition> -->
     </div>
 </template>
 
@@ -43,7 +45,18 @@
         }
         .sub_content {
             padding: 0 0 0 48px;
+            overflow: hidden;
         }
+    }
+    .slide-enter-active,
+    .slide-leave-active {
+        transition: all 0.3s ease;
+    }
+    .slide-enter {
+        opacity: 0;
+    }
+    .slide-leave-to {
+        opacity: 0;
     }
 </style>
 
@@ -51,12 +64,14 @@
 import { onMounted, ref, reactive, inject, watchEffect } from 'vue';
 import Item from './Item';
 import MenuList from './MenuList';
+import CollapseTransition from '../../../assets/js/collapse-transition';
 
 export default {
     name: "SubItem",
     components: {
         'v-item': Item,
-        'menu-list': MenuList
+        'menu-list': MenuList,
+        'collapse-transition': CollapseTransition
     },
     props: {
         data: {

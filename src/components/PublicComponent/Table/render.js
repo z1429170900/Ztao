@@ -1,3 +1,5 @@
+import { h } from 'vue';
+
 export default {
     props: {
         render: {
@@ -9,7 +11,7 @@ export default {
             default: () => {}
         }
     },
-    render(h) {
+    render() {
         return this.render(h, this.parmas)
     }
 }
